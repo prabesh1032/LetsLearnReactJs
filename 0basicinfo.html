@@ -1,49 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body style="background-color: aqua;color: black;"> 
+
+<body style="background-color: aqua;color: black;">
     <div id="root"></div>
 
-<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-<script type="text/babel">
-    const element = React.createElement(
-        'h1',
-        {id: 'title'},
-        "Hello, React!"
-    );
-    const element2 = React.createElement(
-        'p',
-        {id: 'para'},
-        "This is a simple React example."
-    );//multiple elements can make code longer and harder to read and also more complex
-    //jsx is used to make it easier to read and write
-    //jsx means javascript xml  and it looks like html
-    //babel is used to convert jsx to react code and browser can understand it
-    //jsx code must be transpiled using babel before using it in the browser
-     const element1jsx = <h1 id="title">Hello, React with JSX!</h1>;
-     const element2jsx = <p id="para">This is a simple React example using JSX.</p>;
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const element = React.createElement(
+            'h1',
+            { id: 'title' },
+            "Hello, React!"
+        );
+        const element2 = React.createElement(
+            'p',
+            { id: 'para' },
+            "This is a simple React example."
+        );//multiple elements can make code longer and harder to read and also more complex
+        //jsx is used to make it easier to read and write
+        //jsx means javascript xml  and it looks like html
+        //babel is used to convert jsx to react code and browser can underst and it
+        //jsx code must be transpiled using babel before using it in the browser
+        const element1jsx = <h1 id="title">Hello, React with JSX!</h1>;
+        const element2jsx = <p id="para" className="text">This is a simple React example using JSX.</p>;
+        //className is used instead of class in jsx because class is a reserved word in javascript
+        const element3jsx = (
+            <div>
+                <h2>This is a heading inside a div</h2>
+                <p>This is a paragraph inside a div</p>
+            </div>
+        );
+        //jsx expressions must have only one parent element and small brackets are used to wrap multiple lines of jsx code
+        //this element3jsx is best practice to use when we have multiple elements
+        //we need to wrap them in a single parent element like <>, div, section, article etc. otherwise it will throw error
+        const element4jsx = (
+            //<h1>Invalid JSX</h1>
+            //<p>This will throw an error because there are multiple root elements.</p>
+            <>
+                <h1>Valid JSX</h1>
+                <p>This will not throw an error because they are wrapped in a fragment.</p>
+            </> //This is a valid way to wrap multiple elements without adding extra nodes to the DOM
+        );
 
+        //react component
+        function App({ name, age, isloggedin }) {
+            return (
+                <div>
+                    <h1>Welcome {name} to My React App</h1>
+                    <p>This is a simple React component created by {name} using JSX.</p>
+                    <p>{name} is {age > 18 ? "an adult" : "a minor"}</p>
+                    <p>{name} is {isloggedin ? "logged in" : "not logged in"}</p>
+                </div>
+            );
+        }
+        function AppOld(props) {
+            return (
+                <div>
+                    <h1 style={{ color: "blue" }}>
+                        Welcome {props.name} to My React App
+                    </h1>
+                    <p style={{ color: "green" }}>This is a simple React component created by {props.name} using JSX.</p>
+                    <p style={{ color: "red" }}>{props.name} is {props.age > 18 ? "an adult" : "a minor"}</p>
+                    <p>{props.name} is {props.isloggedin ? "logged in" : "not logged in"}</p>
+                </div>
+            );
+        }
 
+        function Header() {
+            return (
+                <header>
+                    <h1>My Website</h1>
+                    <nav>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            );
+        }
+        function Footer(){
+            return (
+                <footer>
+                    <p>&copy; 2024 My Website. All rights reserved.</p>
+                </footer>
+            );
+        }
+        function MainContent(props){
+            return (
+                <main>
+                    <h2>Welcome {props.name} to My Website</h2>
+                    <p>{props.content}</p>
+                </main>
+            );
+        }
 
+        //in props we can pass data from parent component to child component we can pass any data type like string, number, arrayetc.
+        //true false null undefined cannot shown in ui
+        //object will thow error if we try to show it in ui
+        //however props are read only we cannot modify them in child component
 
+        const course = ['React', 'JavaScript', 'HTML', 'CSS'];
+        const courseList = (
+            <div>
+                <h2>Course List:</h2>
+                <ul>
+                    {course.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))}
+                </ul>
+            </div>
+        );
 
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    // root.render(element);
-    // root.render(element2);
-    // Note: The second render call will overwrite the first one.because ReactDOM.createRoot can only manage one root at a time.
-    root.render(
-        <div>
-            {element1jsx}
-            {element2jsx}
-        </div>
-    );
-</script>
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        // root.render(element);
+        // root.render(element2);
+        // Note: The second render call will overwrite the first one.because ReactDOM.createRoot can only manage one root at a time.
+        root.render(
+            <>
+                {element1jsx}
+                {element2jsx}
+                {element3jsx}
+                {element4jsx}
+                <App name="Prabesh" age={25} isloggedin={true} />
+                <AppOld name="Sita" age={17} isloggedin={false} />
+                {courseList}
+                <Header />
+                <MainContent name="Prabesh" content="This is the main content of the website and it is very informative." />
+                <Footer />
+            </>
+        );
+    </script>
 
 </body>
+
 </html>
