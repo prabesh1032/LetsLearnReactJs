@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: aqua;color: black;"> 
+    <div id="root"></div>
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const element = React.createElement(
+        'h1',
+        {id: 'title'},
+        "Hello, React!"
+    );
+    const element2 = React.createElement(
+        'p',
+        {id: 'para'},
+        "This is a simple React example."
+    );//multiple elements can make code longer and harder to read and also more complex
+    //jsx is used to make it easier to read and write
+    //jsx means javascript xml  and it looks like html
+    //babel is used to convert jsx to react code and browser can understand it
+    //jsx code must be transpiled using babel before using it in the browser
+     const element1jsx = <h1 id="title">Hello, React with JSX!</h1>;
+     const element2jsx = <p id="para">This is a simple React example using JSX.</p>;
+
+
+
+
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    // root.render(element);
+    // root.render(element2);
+    // Note: The second render call will overwrite the first one.because ReactDOM.createRoot can only manage one root at a time.
+    root.render(
+        <div>
+            {element1jsx}
+            {element2jsx}
+        </div>
+    );
+</script>
+
+</body>
+</html>
