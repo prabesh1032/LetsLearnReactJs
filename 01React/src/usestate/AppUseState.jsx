@@ -1,5 +1,5 @@
 import { useState } from "react";
-export default function CounDownApp() {
+export default function AppUseState() {
     //let count = 0;
     // useState is a react hook that allows us to add state to functional components.
     const [count, setCount] = useState(0);
@@ -19,7 +19,7 @@ export default function CounDownApp() {
         //set count say react to rerender the component with the new count value. which make updated value visible in the UI.
     }
     return (
-        <div className="CounDownApp">
+        <div className="AppUseState">
             <p>Counter:{count}</p>
             <button onClick={increseNumber}>Increment:{count}</button>
         </div>
