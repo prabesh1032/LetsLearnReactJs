@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback } from "react";
 import Sum from "./Sum";
-import Post from "./Post";
+import Post from "./Postss";
 
 export default function AppMemo() {
     const [count, setCount] = useState(0);
