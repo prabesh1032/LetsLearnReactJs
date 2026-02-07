@@ -10,18 +10,19 @@ import TimeOut from './useeffect/TimeOut.jsx'
 import SearchUsers from './useeffect/Search.jsx'
 import Countdown from './useeffect/CountDownTimer.jsx'  
 import AutoSave from './useeffect/AutoSave.jsx'
+import AppMemo from './usememo/Appmemo.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    {/* <App /> */}
-    {/* <App2 /> */}
-    {/* <App3 /> */}
-    {/* <CounDownApp /> */}
-    {/* <Clock /> */}
-    {/* <TimeOut/> */}
-    {/* <SearchUsers /> */}
-    {/* <Countdown /> */}
-    <AutoSave />
-
-  </StrictMode>,
+    <>
+        {/* <App /> */}
+        {/* <App2 /> */}
+        {/* <App3 /> */}
+        {/* <CounDownApp /> */}
+        {/* <Clock /> */}
+        {/* <TimeOut/> */}
+        {/* <SearchUsers /> */}
+        {/* <Countdown /> */}
+        {/* <AutoSave /> */}
+        <AppMemo />
+    </>
 )
