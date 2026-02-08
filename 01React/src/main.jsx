@@ -12,6 +12,9 @@ import Countdown from './useeffect/CountDownTimer.jsx'
 import AutoSave from './useeffect/AutoSave.jsx'
 import AppMemo from './usememo/Appmemo.jsx'
 import ToDo from './usememo/ToDo.jsx'
+import Stopwatch from './useref/Stopwatch.jsx';
+import Login from './useref/Login.jsx'
+import Video from './useref/Video.jsx'
 
 createRoot(document.getElementById('root')).render(
     <>
@@ -25,6 +28,9 @@ createRoot(document.getElementById('root')).render(
         {/* <Countdown /> */}
         {/* <AutoSave /> */}
         {/* <AppMemo /> */}
-        <ToDo />
+        {/* <ToDo /> */}
+        {/* <Stopwatch /> */}
+        {/* <Login /> */}
+        <Video />
     </>
 )
