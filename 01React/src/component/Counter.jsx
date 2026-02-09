@@ -1,6 +1,9 @@
 import React from 'react';
+import { useContext } from 'react';
+import { CountContext } from '../usecontext/CountContext'
 
-function Counter({ count, setCount }) {
+function Counter() {
+    const { count, setCount } = useContext(CountContext);
 
     function increment() {
         setCount(count + 1);
