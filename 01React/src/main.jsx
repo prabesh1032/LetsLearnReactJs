@@ -18,6 +18,7 @@ import Video from './useref/Video.jsx'
 import Form from './reacthookform/Form.jsx'
 import ReactHookform from './reacthookform/ReactHookform.jsx'
 import ZodForm from './reacthookform/ZodForm.jsx'
+import AppuseContext from './usecontext/AppuseContext.jsx'
 
 createRoot(document.getElementById('root')).render(
     <>
@@ -37,6 +38,7 @@ createRoot(document.getElementById('root')).render(
         {/* <Video /> */}
         {/* <Form /> */}
         {/* <ReactHookform /> */}
-        <ZodForm />
+        {/* <ZodForm /> */}
+        <AppuseContext />
     </>
 )
