@@ -17,6 +17,7 @@ import Login from './useref/Login.jsx'
 import Video from './useref/Video.jsx'
 import Form from './reacthookform/Form.jsx'
 import ReactHookform from './reacthookform/ReactHookform.jsx'
+import ZodForm from './reacthookform/ZodForm.jsx'
 
 createRoot(document.getElementById('root')).render(
     <>
@@ -35,6 +36,7 @@ createRoot(document.getElementById('root')).render(
         {/* <Login /> */}
         {/* <Video /> */}
         {/* <Form /> */}
-        <ReactHookform />
+        {/* <ReactHookform /> */}
+        <ZodForm />
     </>
 )
