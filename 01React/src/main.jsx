@@ -15,6 +15,8 @@ import ToDo from './usememo/ToDo.jsx'
 import Stopwatch from './useref/Stopwatch.jsx';
 import Login from './useref/Login.jsx'
 import Video from './useref/Video.jsx'
+import Form from './reacthookform/Form.jsx'
+import ReactHookform from './reacthookform/ReactHookform.jsx'
 
 createRoot(document.getElementById('root')).render(
     <>
@@ -31,6 +33,8 @@ createRoot(document.getElementById('root')).render(
         {/* <ToDo /> */}
         {/* <Stopwatch /> */}
         {/* <Login /> */}
-        <Video />
+        {/* <Video /> */}
+        {/* <Form /> */}
+        <ReactHookform />
     </>
 )
